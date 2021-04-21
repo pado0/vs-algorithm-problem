@@ -1,4 +1,10 @@
-//4시 20분~
+/*
+못풀었음.
+문제풀이 정리해서 다시보기,
+일렬로 flag 놔주고, flag 해제하는걸 더 간략하게 정리하기*/
+
+
+// flag를 거두는 과정이 없음
 #include <iostream>
 #include <vector>
 #include <queue>
@@ -51,6 +57,17 @@ void line(int n, int len, int direction, int done) { // 노드번호, 거리 , 상하좌�
 	cout << "n:"<<n <<" x: "<< x << "  y: " << y << endl;
 	if (n == v.size()) { // 종료조건, 모든노드 상하좌우 돌았음
 		//최대한 많은 노드가 연결되어있어야함. >>> 이거다시생각하기
+
+			//flag전체확인!!!!!!!!!
+		cout << endl;
+		cout << "flag 전체확인 : " << endl;
+		for (int i = 1; i <= N; i++) {
+			for (int j = 1; j <= N; j++) {
+				cout << flag[i][j] << " ";
+			}
+			cout << endl;
+		}
+
 		if (done > node_max) {
 			node_max = done;
 			leng_min = len;
@@ -73,83 +90,142 @@ void line(int n, int len, int direction, int done) { // 노드번호, 거리 , 상하좌�
 	else {
 		//x,y는 현재 코어 위치
 		//전선이 없고 / 코어가 없는동안
-		int flagt = 0;
+		int flagt1 = 0, flagt2 = 0, flagt3 = 0, flagt4 = 0;
 		int tmp = 0;
 		int cnt = 0;
 		if (direction == 1) {
 			x--;
 			while (flag[x][y] == 0 && map[x][y] == 0) {
-				cnt++;
 				if (x == 1 || y == 1 || x == N || y == N) {
-					for (int i = x; i <= x + cnt; i++) flag[x][y] = 1;
-					len = len + cnt;
-					//cout << "1: " << len;
-					flagt = 1;
+					flagt1 = 1;
 					break;
 				}
 				x--;
-				
+			}if (flagt1 == 1) {
+				x = v[arr[n]].first;
+				x--; cnt = 0;
+				while (flag[x][y] == 0 && map[x][y] == 0) {
+					cnt++;
+					if (x == 1 || y == 1 || x == N || y == N) {
+						for (int i = x; i <= x + cnt; i++) { 
+							cout << "x!!: "<< x << endl;
+							flag[i][y] = 1; 
+						}
+						len = len + cnt;
+						cout << "cnt1: " << len << endl;
+						flagt1 = 1;
+						break;
+					}
+					x--;
+
+				}
 			}
-			cout << "cnt1: " << cnt << endl;
+	
 			cnt = 0; x = v[arr[n]].first;  y = v[arr[n]].second;
 		}
 		else if (direction == 2) {
 			x++;
 			while (flag[x][y] == 0 && map[x][y] == 0) {
-				cnt++;
 				if (x == 1 || y == 1 || x == N || y == N) {
-					for (int i = x - cnt; i <= x; i++) flag[x][y] = 1;
-					len = len + cnt;
-					flagt = 1;
-					//cout << "2: " << len;
+					flagt2 = 1;
 					break;
 				}
 				x++;
-				
+			}if (flagt2 == 1) {
+				x = v[arr[n]].first;
+				x++; cnt = 0;
+				while (flag[x][y] == 0 && map[x][y] == 0) {
+					cnt++;
+					if (x == 1 || y == 1 || x == N || y == N) {
+						for (int i = x - cnt; i <= x; i++) flag[i][y] = 1;
+						len = len + cnt;
+						cout << "cnt2: " << len << endl;
+						flagt2 = 1;
+						break;
+					}
+					x++;
+
+				}
 			}
-			cout << "cnt2: " << cnt << endl;
+
 			cnt = 0; x = v[arr[n]].first;  y = v[arr[n]].second;
 		}
+
 		else if (direction == 3) {
 			y--;
 			while (flag[x][y] == 0 && map[x][y] == 0) {
-				cnt++;
 				if (x == 1 || y == 1 || x == N || y == N) {
-					for (int i = y; i <= y + cnt; i++) flag[x][y] = 1;
-					len = len + cnt;
-					flagt = 1;
+					flagt3 = 1;
 					break;
 				}
 				y--;
-				
 			}
-			cout << "cnt3: " << cnt << endl;
+			if (flagt3 == 1) {
+				y = v[arr[n]].second;
+				y--; cnt = 0;
+				while (flag[x][y] == 0 && map[x][y] == 0) {
+					cnt++;
+					if (x == 1 || y == 1 || x == N || y == N) {
+						for (int i = y; i <= y + cnt; i++) flag[x][i] = 1;
+						len = len + cnt;
+						cout << "cnt3: " << len << endl;
+						flagt3 = 1;
+
+						
+
+						break;
+					}
+					y--;
+
+				}
+			}
+
 			cnt = 0; x = v[arr[n]].first;  y = v[arr[n]].second;
 		}
+
 		else if (direction == 4) {
 			y++;
 			while (flag[x][y] == 0 && map[x][y] == 0) {
-				cnt++;
 				if (x == 1 || y == 1 || x == N || y == N) {
-					for (int i = y - cnt; i <= y; i++) flag[x][y] = 1;
-					len = len + cnt;
-					flagt = 1;
+					flagt4 = 1;
 					break;
-
 				}
 				y++;
+			}if (flagt4 == 1) {
+				y = v[arr[n]].second;
+				y++; cnt = 0;
+				while (flag[x][y] == 0 && map[x][y] == 0) {
+					cnt++;
+					if (x == 1 || y == 1 || x == N || y == N) {
+						for (int i = y - cnt; i <= y; i++) flag[x][i] = 1;
+						len = len + cnt;
+						cout << "cnt4: " << len << endl;
+						flagt4 = 1;
+						break;
+					}
+					y++;
+
+				}
 			}
-			cout << "cnt4: " << cnt << endl;
+
 			cnt = 0; x = v[arr[n]].first;  y = v[arr[n]].second;
 		}
 
-		if (flagt == 1) { done++; }
+		if (flagt1==1 || flagt2  == 1|| flagt3 == 1|| flagt4 == 1) { 
+			done++; 
+		}
 
 		
 		//다음노드 선택하기
 		
+		
 		//상
 		line(n + 1, len, 1, done);
+
+
+		//flag 거두기만 해주면 완성임진짜. 근데 이렇게까지 해야해?
+		// 다시풀어봐!!
+
 
 		//하
 		line(n + 1, len, 2, done);
@@ -200,6 +276,9 @@ int main() {
 			line(0, 0, tt, 0);  // 한번 돌면 첫노드 1일때 다돈거
 			//cout << leng_min << endl;
 
+
+			
+		
 
 			//flag 초기화
 			for (int i = 1; i <= N; i++) {
