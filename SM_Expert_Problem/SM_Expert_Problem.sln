@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2026
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SM_Expert_Problem", "SM_Expert_Problem\SM_Expert_Problem.vcxproj", "{094E9902-3853-4B4F-8D3F-F09BA3CF4CA8}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "2117_홈 방범 서비스", "2117_홈 방범 서비스\2117_홈 방범 서비스.vcxproj", "{C213B5F2-F322-4416-9161-09BE3FAEF597}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "1767_프로세서 연결하기", "1767_프로세서 연결하기\1767_프로세서 연결하기.vcxproj", "{9DAAB45B-60E9-456D-A72B-1011C801B35A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,14 +15,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{094E9902-3853-4B4F-8D3F-F09BA3CF4CA8}.Debug|x64.ActiveCfg = Debug|x64
-		{094E9902-3853-4B4F-8D3F-F09BA3CF4CA8}.Debug|x64.Build.0 = Debug|x64
-		{094E9902-3853-4B4F-8D3F-F09BA3CF4CA8}.Debug|x86.ActiveCfg = Debug|Win32
-		{094E9902-3853-4B4F-8D3F-F09BA3CF4CA8}.Debug|x86.Build.0 = Debug|Win32
-		{094E9902-3853-4B4F-8D3F-F09BA3CF4CA8}.Release|x64.ActiveCfg = Release|x64
-		{094E9902-3853-4B4F-8D3F-F09BA3CF4CA8}.Release|x64.Build.0 = Release|x64
-		{094E9902-3853-4B4F-8D3F-F09BA3CF4CA8}.Release|x86.ActiveCfg = Release|Win32
-		{094E9902-3853-4B4F-8D3F-F09BA3CF4CA8}.Release|x86.Build.0 = Release|Win32
 		{C213B5F2-F322-4416-9161-09BE3FAEF597}.Debug|x64.ActiveCfg = Debug|x64
 		{C213B5F2-F322-4416-9161-09BE3FAEF597}.Debug|x64.Build.0 = Debug|x64
 		{C213B5F2-F322-4416-9161-09BE3FAEF597}.Debug|x86.ActiveCfg = Debug|Win32
@@ -31,6 +23,14 @@ Global
 		{C213B5F2-F322-4416-9161-09BE3FAEF597}.Release|x64.Build.0 = Release|x64
 		{C213B5F2-F322-4416-9161-09BE3FAEF597}.Release|x86.ActiveCfg = Release|Win32
 		{C213B5F2-F322-4416-9161-09BE3FAEF597}.Release|x86.Build.0 = Release|Win32
+		{9DAAB45B-60E9-456D-A72B-1011C801B35A}.Debug|x64.ActiveCfg = Debug|x64
+		{9DAAB45B-60E9-456D-A72B-1011C801B35A}.Debug|x64.Build.0 = Debug|x64
+		{9DAAB45B-60E9-456D-A72B-1011C801B35A}.Debug|x86.ActiveCfg = Debug|Win32
+		{9DAAB45B-60E9-456D-A72B-1011C801B35A}.Debug|x86.Build.0 = Debug|Win32
+		{9DAAB45B-60E9-456D-A72B-1011C801B35A}.Release|x64.ActiveCfg = Release|x64
+		{9DAAB45B-60E9-456D-A72B-1011C801B35A}.Release|x64.Build.0 = Release|x64
+		{9DAAB45B-60E9-456D-A72B-1011C801B35A}.Release|x86.ActiveCfg = Release|Win32
+		{9DAAB45B-60E9-456D-A72B-1011C801B35A}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
