@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "2117_홈 방범 서비스",
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "1767_프로세서 연결하기", "1767_프로세서 연결하기\1767_프로세서 연결하기.vcxproj", "{9DAAB45B-60E9-456D-A72B-1011C801B35A}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "5658_보물상자 비밀번호", "5658_보물상자 비밀번호\5658_보물상자 비밀번호.vcxproj", "{181003BF-F87D-4AB4-AEBC-2DA7534C88E9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +33,14 @@ Global
 		{9DAAB45B-60E9-456D-A72B-1011C801B35A}.Release|x64.Build.0 = Release|x64
 		{9DAAB45B-60E9-456D-A72B-1011C801B35A}.Release|x86.ActiveCfg = Release|Win32
 		{9DAAB45B-60E9-456D-A72B-1011C801B35A}.Release|x86.Build.0 = Release|Win32
+		{181003BF-F87D-4AB4-AEBC-2DA7534C88E9}.Debug|x64.ActiveCfg = Debug|x64
+		{181003BF-F87D-4AB4-AEBC-2DA7534C88E9}.Debug|x64.Build.0 = Debug|x64
+		{181003BF-F87D-4AB4-AEBC-2DA7534C88E9}.Debug|x86.ActiveCfg = Debug|Win32
+		{181003BF-F87D-4AB4-AEBC-2DA7534C88E9}.Debug|x86.Build.0 = Debug|Win32
+		{181003BF-F87D-4AB4-AEBC-2DA7534C88E9}.Release|x64.ActiveCfg = Release|x64
+		{181003BF-F87D-4AB4-AEBC-2DA7534C88E9}.Release|x64.Build.0 = Release|x64
+		{181003BF-F87D-4AB4-AEBC-2DA7534C88E9}.Release|x86.ActiveCfg = Release|Win32
+		{181003BF-F87D-4AB4-AEBC-2DA7534C88E9}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
