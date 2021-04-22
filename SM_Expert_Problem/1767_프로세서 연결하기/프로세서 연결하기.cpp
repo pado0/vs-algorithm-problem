@@ -54,19 +54,10 @@ void line(int n, int len, int direction, int done) { // ³ëµå¹øÈ£, °Å¸® , »óÇÏÁÂ¿
 	int x = v[arr[n]].first;
 	int y = v[arr[n]].second;
 
-	cout << "n:"<<n <<" x: "<< x << "  y: " << y << endl;
+	cout << "¹æÇâ: " << direction << " n:"<<n <<" x: "<< x << "  y: " << y << endl;
 	if (n == v.size()) { // Á¾·áÁ¶°Ç, ¸ðµç³ëµå »óÇÏÁÂ¿ì µ¹¾ÒÀ½
 		//ÃÖ´ëÇÑ ¸¹Àº ³ëµå°¡ ¿¬°áµÇ¾îÀÖ¾î¾ßÇÔ. >>> ÀÌ°Å´Ù½Ã»ý°¢ÇÏ±â
 
-			//flagÀüÃ¼È®ÀÎ!!!!!!!!!
-		cout << endl;
-		cout << "flag ÀüÃ¼È®ÀÎ : " << endl;
-		for (int i = 1; i <= N; i++) {
-			for (int j = 1; j <= N; j++) {
-				cout << flag[i][j] << " ";
-			}
-			cout << endl;
-		}
 
 		if (done > node_max) {
 			node_max = done;
@@ -93,6 +84,10 @@ void line(int n, int len, int direction, int done) { // ³ëµå¹øÈ£, °Å¸® , »óÇÏÁÂ¿
 		int flagt1 = 0, flagt2 = 0, flagt3 = 0, flagt4 = 0;
 		int tmp = 0;
 		int cnt = 0;
+		//cnt = 0; x = v[arr[n]].first;  y = v[arr[n]].second;
+		
+
+
 		if (direction == 1) {
 			x--;
 			while (flag[x][y] == 0 && map[x][y] == 0) {
@@ -107,9 +102,7 @@ void line(int n, int len, int direction, int done) { // ³ëµå¹øÈ£, °Å¸® , »óÇÏÁÂ¿
 				while (flag[x][y] == 0 && map[x][y] == 0) {
 					cnt++;
 					if (x == 1 || y == 1 || x == N || y == N) {
-						for (int i = x; i <= x + cnt; i++) { 
-							cout << "x!!: "<< x << endl;
-							flag[i][y] = 1; 
+						for (int i = x; i <= x + cnt; i++) { flag[i][y] = 1; 
 						}
 						len = len + cnt;
 						cout << "cnt1: " << len << endl;
@@ -121,7 +114,7 @@ void line(int n, int len, int direction, int done) { // ³ëµå¹øÈ£, °Å¸® , »óÇÏÁÂ¿
 				}
 			}
 	
-			cnt = 0; x = v[arr[n]].first;  y = v[arr[n]].second;
+			//cnt = 0; x = v[arr[n]].first;  y = v[arr[n]].second;
 		}
 		else if (direction == 2) {
 			x++;
@@ -148,7 +141,7 @@ void line(int n, int len, int direction, int done) { // ³ëµå¹øÈ£, °Å¸® , »óÇÏÁÂ¿
 				}
 			}
 
-			cnt = 0; x = v[arr[n]].first;  y = v[arr[n]].second;
+			//cnt = 0; x = v[arr[n]].first;  y = v[arr[n]].second;
 		}
 
 		else if (direction == 3) {
@@ -180,7 +173,7 @@ void line(int n, int len, int direction, int done) { // ³ëµå¹øÈ£, °Å¸® , »óÇÏÁÂ¿
 				}
 			}
 
-			cnt = 0; x = v[arr[n]].first;  y = v[arr[n]].second;
+			//cnt = 0; x = v[arr[n]].first;  y = v[arr[n]].second;
 		}
 
 		else if (direction == 4) {
@@ -208,8 +201,19 @@ void line(int n, int len, int direction, int done) { // ³ëµå¹øÈ£, °Å¸® , »óÇÏÁÂ¿
 				}
 			}
 
-			cnt = 0; x = v[arr[n]].first;  y = v[arr[n]].second;
+			
 		}
+
+
+		//flagÀüÃ¼È®ÀÎ!!!!!!!!!
+		cout << "flag ÀüÃ¼È®ÀÎ : " << endl;
+		for (int i = 1; i <= N; i++) {
+			for (int j = 1; j <= N; j++) {
+				cout << flag[i][j] << " ";
+			}
+			cout << endl;
+		}
+		
 
 		if (flagt1==1 || flagt2  == 1|| flagt3 == 1|| flagt4 == 1) { 
 			done++; 
@@ -219,12 +223,20 @@ void line(int n, int len, int direction, int done) { // ³ëµå¹øÈ£, °Å¸® , »óÇÏÁÂ¿
 		//´ÙÀ½³ëµå ¼±ÅÃÇÏ±â
 		
 		
-		//»ó
-		line(n + 1, len, 1, done);
+		
+		for (int i = 1; i <= 4; i++) {
+			line(n + 1, len, i, done);
 
+			if (flagt1 == 1)for (int i = x; i <= x + cnt; i++) flag[i][y] = 0;
+			else if(flagt2==1)for (int i = x - cnt; i <= x; i++) flag[i][y] = 0;
+			else if (flagt3 == 1)for (int i = y; i <= y + cnt; i++) flag[x][i] = 0;
+			else if (flagt4 == 1)for (int i = y - cnt; i <= y; i++) flag[x][i] = 0;
+		}
 
 		//flag °ÅµÎ±â¸¸ ÇØÁÖ¸é ¿Ï¼ºÀÓÁøÂ¥. ±Ùµ¥ ÀÌ·¸°Ô±îÁö ÇØ¾ßÇØ?
 		// ´Ù½ÃÇ®¾îºÁ!!
+		/*//»ó
+		line(n + 1, len, 1, done);
 
 
 		//ÇÏ
@@ -234,7 +246,7 @@ void line(int n, int len, int direction, int done) { // ³ëµå¹øÈ£, °Å¸® , »óÇÏÁÂ¿
 		line(n + 1, len, 3, done);
 
 		//¿ì
-		line(n + 1, len, 4, done);
+		line(n + 1, len, 4, done);*/
 	}
 }
 
@@ -273,11 +285,67 @@ int main() {
 		sum = 0;
 		for (int tt = 1; tt <=4; tt++) {
 			cout << "startÀç±Í:" << endl;
-			line(0, 0, tt, 0);  // ÇÑ¹ø µ¹¸é Ã¹³ëµå 1ÀÏ¶§ ´Ùµ·°Å
-			//cout << leng_min << endl;
-
-
+			int flaga1 = 0, flaga2 = 0, flaga3 = 0, flaga4 = 0;
+			int x = v[arr[0]].first;
+			int y = v[arr[0]].second;
 			
+			if (tt == 1) {
+				for (int i = x-1; i >= 1; i--) {
+					if (flag[i][y] != 0 || map[i][y] != 0) {
+						flaga1 = 1;
+						break;
+					}
+				}
+				if (flaga1 == 0) {
+					for (int i = x - 1; i >= 1; i--) {
+						flag[i][y] = 1;
+					}
+				}
+			}
+			else if (tt == 2) {
+				for (int i = x +1; i <= N; i++) {
+					if (flag[i][y] != 0 || map[i][y] != 0) {
+						flaga2 = 1;
+						break;
+					}
+				}
+				if (flaga2 == 0) {
+					for (int i = x + 1; i <= N; i++) {
+						flag[i][y] = 1;
+					}
+				}
+			}
+			else if (tt == 3) {
+				for (int i = y - 1; i >= 1; i--) {
+					if (flag[x][i] != 0 || map[x][i] != 0) {
+						flaga3 = 1;
+						break;
+					}
+				}
+				if (flaga3 == 0) {
+					for (int i = y - 1; i >= 1; i--) {
+						flag[i][y] = 1;
+					}
+				}
+			}
+			else if (tt == 4) {
+				for (int i = y + 1; i <= N; i++) {
+					if (flag[x][i] != 0 || map[x][i] != 0) {
+						flaga4 = 1;
+						break;
+					}
+				}
+				if (flaga4 == 0) {
+					for (int i = y + 1; i <= N; i++) {
+						flag[i][y] = 1;
+					}
+				}
+			}
+			
+			line(0, 0, tt, 0);  // ÇÑ¹ø µ¹¸é Ã¹³ëµå 1ÀÏ¶§ ´Ùµ·°Å
+			////cout << leng_min << endl;
+
+			//Ã³À½µµ´Â¾Ö´Â Àç±Íµé¾î°¡±âÀü¿¡ flag, ¾È±×·¯¸é µÎ¹øÂ° µ¹ ¶§ flag°¡ ÇØÁ¦µÊ
 		
 
 			//flag ÃÊ±âÈ­
