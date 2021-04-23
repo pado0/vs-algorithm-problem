@@ -1,5 +1,7 @@
 /*
-목표: 빨리 내려가기
+!!제한시간 초과
+
+목표: 빨리 내려가기 
 
 
 
@@ -39,6 +41,14 @@ int N;
 int map[12][12];
 int cnt = 0; // 사람 수 count
 
+vector<pair<int, int>> stair;
+priority_queue<int> pq;
+int arr1[300];
+int arr2[300];
+int answer = 2147000000;
+int buffer[300];
+int min_time1 = 0;
+int min_time2 = 0;
 struct person {
 	int x, y, time, stair;
 	person() {
@@ -52,11 +62,7 @@ struct person {
 		return time < d.time;
 	}
 };
-
 struct person p[10];
-vector<pair<int, int>> stair;
-priority_queue<int> pq;
-vector < pair<int, int >> vv;
 
 void dfs(int n, int s) {
 
@@ -70,7 +76,7 @@ void dfs(int n, int s) {
 	int sx, sy;
 	if (n == cnt - 1) {
 		//뭐가 몇번계단인지를 리턴해야함
-		cout << "어떤 노드가 몇번 개단인지" << endl;
+		////cout << "어떤 노드가 몇번 개단인지" << endl;
 		for (int i = 0; i < cnt; i++) {
 
 			//어느 노드가 몇 번 째 ㄱ 계단을 쓰는지 p[i]에 들어있음
@@ -82,23 +88,91 @@ void dfs(int n, int s) {
 
 			// 계단까지 얼마나 걸리는지 시간이 들어있음
 			p[i].time = abs(x - sx) + abs(y - sy);
-			cout << p[i].x << " " << p[i].y << " " << p[i].stair << " " << p[i].time << endl;
+			////cout << p[i].x << " " << p[i].y << " " << p[i].stair << " " << p[i].time << endl;
+			int pt = p[i].time;
+			////cout << "pt!!  " <<pt << endl;
+			// pushback이 아니라 time에 해당하는 index에++해줘야함
+			if (p[i].stair == 0) {
+				arr1[pt]++;
 
-			pq.push(-p[i].time);
+		
+			}
+			else if (p[i].stair == 1) {
+				arr2[pt]++;
+			}
+
+	
 		}
 
-		int count = -pq.top() +1;
-		vv.push_back(make_pair(-pq.top(), count));
-		pq.pop();
-		
-		// 계단 도착시간까지 알아냈는데, 큐에 넣고 3개씩 묶어서 n초간 내려가는건
-		// 어떻게 처리해야하지? 모르겠다.
-		// 내일까지 고민해보고 답 확인하기
-		//count+1 값을 넣는다
-		/*while (!pq.empty()) {
-			
+		//v0먼저 처리
+		for (int t = 1; t < 20; t++) {
+			while (arr1[t] > 0) {
+				arr1[t]--;
 
-		}*/
+				int down_time = map[stair[0].first][stair[0].second];
+				
+				for (int tt = t; tt < 300; tt++) {
+					if (buffer[tt] < 3) {
+						buffer[tt]++;
+						down_time--;
+
+						if (down_time == 0) {
+							if (tt+1 > min_time1) {
+								min_time1 = tt +1;
+								break;
+							}
+						}
+					}
+				}
+
+			}
+			
+		}
+		
+		for (int t = 0; t < 300; t++) {
+			buffer[t] = 0;
+		}
+
+		//v0먼저 처리
+		for (int t = 1; t < 20; t++) {
+			while (arr2[t] > 0) {
+				arr2[t]--;
+
+				int down_time = map[stair[1].first][stair[1].second];
+
+				for (int tt = t; tt < 300; tt++) {
+					if (buffer[tt] < 3) {
+						buffer[tt]++;
+						down_time--;
+
+						if (down_time == 0) {
+							if (tt + 1 > min_time2) {
+								min_time2 = tt + 1;
+								break;
+							}
+						}
+					}
+				}
+
+			}
+
+		}
+
+		int tmp;
+		if (min_time1 > min_time2) {
+			tmp = min_time1;
+		}
+		else {
+			tmp = min_time2;
+		}
+
+		if (tmp < answer) answer = tmp;
+
+		//초기화 해주기
+		for (int t = 0; t < 300; t++) {
+			buffer[t] = 0; arr1[t] = 0; arr2[t] = 0;
+		}
+		min_time2 = 0; min_time1 = 0;
 	}
 
 
@@ -110,28 +184,39 @@ void dfs(int n, int s) {
 }
 
 int main() {
+	int T;
+	
+	cin >> T;
+	for (int iterator = 0; iterator < T; iterator++) {
+		cin >> N;
+		for (int i = 1; i <= N; i++) {
+			for (int j = 1; j <= N; j++) {
+				cin >> map[i][j];
 
-	cin >> N;
-	for (int i = 1; i <= N; i++) {
-		for (int j = 1; j <= N; j++) {
-			cin >> map[i][j];
-
-			if (map[i][j] == 1) { 
-				p[cnt].x = i;
-				p[cnt].y = j;
-				p[cnt].time = 0;
-				cnt++;
+				if (map[i][j] == 1) {
+					p[cnt].x = i;
+					p[cnt].y = j;
+					p[cnt].time = 0;
+					cnt++;
+				}
+				else if (map[i][j] != 0) {
+					stair.push_back(make_pair(i, j));
+				}
 			}
-			else if (map[i][j] != 0) {
-				stair.push_back(make_pair(i, j));
+		}
+
+		//첫번째 노드 기준으로 dfs 진행하기
+		//dfs 1번계단
+		dfs(0, 0); //0번노드 1번계단
+		//dfs 2번계단
+		dfs(0, 1);
+		cout << "#" << iterator+1 << " "<< answer + 1 <<endl;
+	
+		answer = 2147000000;
+		for (int i = 1; i <= N; i++) {
+			for (int j = 1; j <= N; j++) {
+				map[i][j] = 0;
 			}
 		}
 	}
-
-	//첫번째 노드 기준으로 dfs 진행하기
-	//dfs 1번계단
-	dfs(0, 0); //0번노드 1번계단
-	//dfs 2번계단
-	dfs(0, 1);
-
 }
