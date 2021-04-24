@@ -11,6 +11,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "5658_보물상자 비밀번
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "2383_점심식사시간", "2383_점심식사시간\2383_점심식사시간.vcxproj", "{B0F2C382-80B1-43ED-B190-C306D84440A0}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "2122_보호필름", "2122_보호필름\2122_보호필름.vcxproj", "{40AEF69E-5AC8-4EE1-85D8-A404A13A2404}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -51,6 +53,14 @@ Global
 		{B0F2C382-80B1-43ED-B190-C306D84440A0}.Release|x64.Build.0 = Release|x64
 		{B0F2C382-80B1-43ED-B190-C306D84440A0}.Release|x86.ActiveCfg = Release|Win32
 		{B0F2C382-80B1-43ED-B190-C306D84440A0}.Release|x86.Build.0 = Release|Win32
+		{40AEF69E-5AC8-4EE1-85D8-A404A13A2404}.Debug|x64.ActiveCfg = Debug|x64
+		{40AEF69E-5AC8-4EE1-85D8-A404A13A2404}.Debug|x64.Build.0 = Debug|x64
+		{40AEF69E-5AC8-4EE1-85D8-A404A13A2404}.Debug|x86.ActiveCfg = Debug|Win32
+		{40AEF69E-5AC8-4EE1-85D8-A404A13A2404}.Debug|x86.Build.0 = Debug|Win32
+		{40AEF69E-5AC8-4EE1-85D8-A404A13A2404}.Release|x64.ActiveCfg = Release|x64
+		{40AEF69E-5AC8-4EE1-85D8-A404A13A2404}.Release|x64.Build.0 = Release|x64
+		{40AEF69E-5AC8-4EE1-85D8-A404A13A2404}.Release|x86.ActiveCfg = Release|Win32
+		{40AEF69E-5AC8-4EE1-85D8-A404A13A2404}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
