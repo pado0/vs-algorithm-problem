@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "2_buffer처리하기_for_SM
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "3_buffer 처리하기2_for_SM_2383", "3_buffer 처리하기2_for_SM_2383\3_buffer 처리하기2_for_SM_2383.vcxproj", "{11EE9B5B-B83F-4AB4-9F34-6C59F7CF02FD}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "4_STL을 함수 인자로 넘기기", "4_STL을 함수 인자로 넘기기\4_STL을 함수 인자로 넘기기.vcxproj", "{1D666CE6-C19D-4EDB-9173-D9476C783FE3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -41,6 +43,14 @@ Global
 		{11EE9B5B-B83F-4AB4-9F34-6C59F7CF02FD}.Release|x64.Build.0 = Release|x64
 		{11EE9B5B-B83F-4AB4-9F34-6C59F7CF02FD}.Release|x86.ActiveCfg = Release|Win32
 		{11EE9B5B-B83F-4AB4-9F34-6C59F7CF02FD}.Release|x86.Build.0 = Release|Win32
+		{1D666CE6-C19D-4EDB-9173-D9476C783FE3}.Debug|x64.ActiveCfg = Debug|x64
+		{1D666CE6-C19D-4EDB-9173-D9476C783FE3}.Debug|x64.Build.0 = Debug|x64
+		{1D666CE6-C19D-4EDB-9173-D9476C783FE3}.Debug|x86.ActiveCfg = Debug|Win32
+		{1D666CE6-C19D-4EDB-9173-D9476C783FE3}.Debug|x86.Build.0 = Debug|Win32
+		{1D666CE6-C19D-4EDB-9173-D9476C783FE3}.Release|x64.ActiveCfg = Release|x64
+		{1D666CE6-C19D-4EDB-9173-D9476C783FE3}.Release|x64.Build.0 = Release|x64
+		{1D666CE6-C19D-4EDB-9173-D9476C783FE3}.Release|x86.ActiveCfg = Release|Win32
+		{1D666CE6-C19D-4EDB-9173-D9476C783FE3}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
