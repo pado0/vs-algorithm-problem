@@ -4,14 +4,19 @@ int unf[100];
 
 int find(int v) {
 	if (unf[v] == v) return v;
-	else return find(unf[v]);
+	else return unf[v] = find(unf[v]);
 }
 
 void uni(int a, int b){
-	int ta = find(a);
-	int tb = find(b);
+	a = find(a);
+	b = find(b);
 
-	if (ta != tb) unf[a] = unf[b];
+	//찾은 a의 집합번호에다 b의집합번호를 넣어줘야됨.
+	// 그래야 같은 집합번호를 갖게됨
+	// a=1,집합번호4, b=5,집합번호 5라면
+	// unf[4] = 5로 해줘야 루트노드를 5로 만드는 것임
+	// unf[4]=5, unf[5]= 5상태인것.
+	if (a != b) unf[a] = b;
 	
 }
 
@@ -57,4 +62,8 @@ int main() {
 		uni(a, b);
 	}
 
+	cin >> a >> b;
+
+	if (find(a) == find(b))cout << "YES";
+	else cout << "NO";
 }
