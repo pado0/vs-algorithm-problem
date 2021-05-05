@@ -1,5 +1,19 @@
 #include <iostream>
 using namespace std;
+int unf[100];
+
+int find(int v) {
+	if (unf[v] == v) return v;
+	else return find(unf[v]);
+}
+
+void uni(int a, int b){
+	int ta = find(a);
+	int tb = find(b);
+
+	if (ta != tb) unf[a] = unf[b];
+	
+}
 
 int main() {
 	ios_base::sync_with_stdio(false);
@@ -31,4 +45,16 @@ int main() {
 	// Union : 둘의집합번호가 다르면 같게 만들어줌
 
 	*/
+
+	// 집합번호 배열 초기화
+	for (int i = 1; i <= n; i++) {
+		unf[i] = i;
+	}
+
+	int a, b;
+	for (int i = 0; i < m; i++) {
+		cin >> a >> b;
+		uni(a, b);
+	}
+
 }
