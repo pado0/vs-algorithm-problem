@@ -25,6 +25,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "77_친구인가_UnionAndFin
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "78_원더랜드_Kruskal MST, UnionAndFind", "78_원더랜드_Kruskal MST, UnionAndFind\78_원더랜드_Kruskal MST, UnionAndFind.vcxproj", "{696FEB8D-6083-47AF-BFF5-05FE1EF07076}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "79_원더랜드_Prim MST_PriorityQueue", "79_원더랜드_Prim MST_PriorityQueue\79_원더랜드_Prim MST_PriorityQueue.vcxproj", "{2848EF54-51AB-4A9A-91ED-4CAC8CDB0980}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -121,6 +123,14 @@ Global
 		{696FEB8D-6083-47AF-BFF5-05FE1EF07076}.Release|x64.Build.0 = Release|x64
 		{696FEB8D-6083-47AF-BFF5-05FE1EF07076}.Release|x86.ActiveCfg = Release|Win32
 		{696FEB8D-6083-47AF-BFF5-05FE1EF07076}.Release|x86.Build.0 = Release|Win32
+		{2848EF54-51AB-4A9A-91ED-4CAC8CDB0980}.Debug|x64.ActiveCfg = Debug|x64
+		{2848EF54-51AB-4A9A-91ED-4CAC8CDB0980}.Debug|x64.Build.0 = Debug|x64
+		{2848EF54-51AB-4A9A-91ED-4CAC8CDB0980}.Debug|x86.ActiveCfg = Debug|Win32
+		{2848EF54-51AB-4A9A-91ED-4CAC8CDB0980}.Debug|x86.Build.0 = Debug|Win32
+		{2848EF54-51AB-4A9A-91ED-4CAC8CDB0980}.Release|x64.ActiveCfg = Release|x64
+		{2848EF54-51AB-4A9A-91ED-4CAC8CDB0980}.Release|x64.Build.0 = Release|x64
+		{2848EF54-51AB-4A9A-91ED-4CAC8CDB0980}.Release|x86.ActiveCfg = Release|Win32
+		{2848EF54-51AB-4A9A-91ED-4CAC8CDB0980}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
