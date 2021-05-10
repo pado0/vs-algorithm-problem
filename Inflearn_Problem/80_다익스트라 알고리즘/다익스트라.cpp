@@ -77,6 +77,7 @@ int main() {
 					// 연결된 노드를 큐에 다넣어준다
 					pq.push(Edge(i, map[vt][i]));
 					
+					// 지금까지 도착한 노드 가중치는 최소라는걸 알고있음
 					// 연결된 노드들 가중치 합 확인했을때 작으면 갱신
 					if (dist[vt] + map[vt][i] < dist[i]) {
 						dist[i] = dist[vt] + map[vt][i];
