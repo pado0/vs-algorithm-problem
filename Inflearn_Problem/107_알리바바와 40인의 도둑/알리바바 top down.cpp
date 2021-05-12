@@ -6,10 +6,14 @@
 - 알리바바같은 문제도 작은문제가 반복되는 규칙을 찾아야하는데,
   브루트포스처럼 다 확인해주는 코드만 짜진다....
   dfs로 하고 메모이제이션 하면 topdown,,?
-*/
+
 
 // 메모이제이션 어디다할까?
 // xy위치까지 가는데 걸리는 에너지를 dy에 기록
+// - top down > 도착지부터 back해서 재귀의 재귀 리턴값 int를 넘김. 도착지부터 하나 처음부터 하나 다를게무어야
+// 아 패러다임자체가 진짜 다르구나. top에서 시작해서 되돌가아며, 초기값을 찍고 하나하나씩 더해짐. 중간중간 이미 계산한 값들을 메모이제이션.
+// 그냥 dfs에서도 메모이제이션 해보기. 가능할것가틍데?
+
 
 #include <iostream>
 #include <queue>
@@ -19,33 +23,24 @@ using namespace std;
 int dy[22][22];
 int N;
 int map[22][22];
-queue<pair<int, int>> q;
 int min_e = 2147000000;
+int h = 0;
 
-void dfs(int x, int y, int h) {
-
-	/* dfs로 메모이제이션이 안되는구나.
-	왜? 메모하려면 이전에 방문한 값을 그대로 박아야하는데
-	dfs는 전체 경우의 수를 다 도니까... 값이 달라질 수도 있음...
-	아니그럼 알리바바 top down도 똑같은거아냐? 그것도 미니멈만 선택해서 갓잔항?
-	- 그거 미니멈은...........................!!!!!!!!!!!!!!!!!
-
-	if(dy[x][y] == 0) dy[x][y] = h;
-	else 
-	*/
-
-	if (h > min_e)return;
-	if (x > N || y > N) return;
-	if (x == N && y == N) {
-		if (h < min_e) min_e = h;
-	}
+int dfs(int x, int y) {
+	// 그 위치까지 가는 데걸리는 값을 기록!!!!!!!!!!!!!!!!!!!!
+	// 처음방문
+	if (x == 1 && y == 1) return dy[x][y] = map[x][y];
 	else {
+		
+		if (y == 1) return dy[x][y] = dfs(x - 1, y) + map[x][y];
+		else if (x == 1) return dy[x][y] = dfs(x, y - 1) + map[x][y];
+		else {
+			// 현재까지 온 길 중 가장 작은놈을 골라 감
+			return dy[x][y] = min(dfs(x - 1, y), dfs(x, y - 1)) + map[x][y];
 
-		dfs(x + 1, y, h + map[x+1][y]);
-		dfs(x, y + 1, h + map[x][y+1]);
+		}
+
 	}
-
-
 }
 
 int main() {
@@ -69,7 +64,7 @@ int main() {
 		}
 	}
 
-	dfs(1, 1, map[1][1]);
-	cout << min_e;
+	cout << dfs(N, N);
 }
 
+*/
