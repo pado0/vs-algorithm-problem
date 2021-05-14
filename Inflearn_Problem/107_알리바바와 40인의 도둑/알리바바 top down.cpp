@@ -14,6 +14,7 @@
 // 아 패러다임자체가 진짜 다르구나. top에서 시작해서 되돌가아며, 초기값을 찍고 하나하나씩 더해짐. 중간중간 이미 계산한 값들을 메모이제이션.
 // 그냥 dfs에서도 메모이제이션 해보기. 가능할것가틍데?
 
+*/
 
 #include <iostream>
 #include <queue>
@@ -29,6 +30,7 @@ int h = 0;
 int dfs(int x, int y) {
 	// 그 위치까지 가는 데걸리는 값을 기록!!!!!!!!!!!!!!!!!!!!
 	// 처음방문
+	if (dy[x][y] != 0) return dy[x][y];
 	if (x == 1 && y == 1) return dy[x][y] = map[x][y];
 	else {
 		
@@ -37,6 +39,8 @@ int dfs(int x, int y) {
 		else {
 			// 현재까지 온 길 중 가장 작은놈을 골라 감
 			return dy[x][y] = min(dfs(x - 1, y), dfs(x, y - 1)) + map[x][y];
+			//dfs(a) : a까지 가는데 걸리는 값, 둘중에 최소가 최적이라고 할 수 있는 것은
+			// X-1,Y와 X, Y-1까지 간 경로의 길이를 뜻하므로, 둘중에 작은값이 무조건 최적이지.
 
 		}
 
@@ -66,5 +70,3 @@ int main() {
 
 	cout << dfs(N, N);
 }
-
-*/
