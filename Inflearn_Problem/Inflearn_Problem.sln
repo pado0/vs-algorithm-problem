@@ -49,6 +49,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "111_최대 점수 구하기
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "112_플로이드_와샬", "112_플로이드_와샬\112_플로이드_와샬.vcxproj", "{D9BC0A6D-580E-4BD1-910D-EC64301F3D7C}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "113_회장뽑기", "113_회장뽑기\113_회장뽑기.vcxproj", "{B9F9D657-1F5B-4385-AD4E-CBFC332F862B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -241,6 +243,14 @@ Global
 		{D9BC0A6D-580E-4BD1-910D-EC64301F3D7C}.Release|x64.Build.0 = Release|x64
 		{D9BC0A6D-580E-4BD1-910D-EC64301F3D7C}.Release|x86.ActiveCfg = Release|Win32
 		{D9BC0A6D-580E-4BD1-910D-EC64301F3D7C}.Release|x86.Build.0 = Release|Win32
+		{B9F9D657-1F5B-4385-AD4E-CBFC332F862B}.Debug|x64.ActiveCfg = Debug|x64
+		{B9F9D657-1F5B-4385-AD4E-CBFC332F862B}.Debug|x64.Build.0 = Debug|x64
+		{B9F9D657-1F5B-4385-AD4E-CBFC332F862B}.Debug|x86.ActiveCfg = Debug|Win32
+		{B9F9D657-1F5B-4385-AD4E-CBFC332F862B}.Debug|x86.Build.0 = Debug|Win32
+		{B9F9D657-1F5B-4385-AD4E-CBFC332F862B}.Release|x64.ActiveCfg = Release|x64
+		{B9F9D657-1F5B-4385-AD4E-CBFC332F862B}.Release|x64.Build.0 = Release|x64
+		{B9F9D657-1F5B-4385-AD4E-CBFC332F862B}.Release|x86.ActiveCfg = Release|Win32
+		{B9F9D657-1F5B-4385-AD4E-CBFC332F862B}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
