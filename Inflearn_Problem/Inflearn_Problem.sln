@@ -51,6 +51,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "112_플로이드_와샬", "
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "113_회장뽑기", "113_회장뽑기\113_회장뽑기.vcxproj", "{B9F9D657-1F5B-4385-AD4E-CBFC332F862B}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "114_위상정렬 (Last)", "114_위상정렬 (Last)\114_위상정렬 (Last).vcxproj", "{5ADB0CF9-C82E-4171-BC26-DF2AC0F943AA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -251,6 +253,14 @@ Global
 		{B9F9D657-1F5B-4385-AD4E-CBFC332F862B}.Release|x64.Build.0 = Release|x64
 		{B9F9D657-1F5B-4385-AD4E-CBFC332F862B}.Release|x86.ActiveCfg = Release|Win32
 		{B9F9D657-1F5B-4385-AD4E-CBFC332F862B}.Release|x86.Build.0 = Release|Win32
+		{5ADB0CF9-C82E-4171-BC26-DF2AC0F943AA}.Debug|x64.ActiveCfg = Debug|x64
+		{5ADB0CF9-C82E-4171-BC26-DF2AC0F943AA}.Debug|x64.Build.0 = Debug|x64
+		{5ADB0CF9-C82E-4171-BC26-DF2AC0F943AA}.Debug|x86.ActiveCfg = Debug|Win32
+		{5ADB0CF9-C82E-4171-BC26-DF2AC0F943AA}.Debug|x86.Build.0 = Debug|Win32
+		{5ADB0CF9-C82E-4171-BC26-DF2AC0F943AA}.Release|x64.ActiveCfg = Release|x64
+		{5ADB0CF9-C82E-4171-BC26-DF2AC0F943AA}.Release|x64.Build.0 = Release|x64
+		{5ADB0CF9-C82E-4171-BC26-DF2AC0F943AA}.Release|x86.ActiveCfg = Release|Win32
+		{5ADB0CF9-C82E-4171-BC26-DF2AC0F943AA}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
