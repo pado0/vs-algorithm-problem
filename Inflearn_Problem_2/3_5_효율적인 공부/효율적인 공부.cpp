@@ -1,9 +1,8 @@
 /*
 M 구간 별 공부의 효율성
-
 가장 높은 효율성은?
+다이나믹 프로그래밍 > 아, 어렵다. dy[i] 정하기 연습이 필요해보임.
 
-시간복잡도가 낮으면 공간복잡도가 높아짐
 */
 
 #include <iostream>
@@ -39,9 +38,25 @@ int main() {
 	sort(study + 1, study + M + 1);
 	
 
-	// 끝나는 시간이 빠른 것 기준으로 정렬
-	//dy[i]: i시간까지 공부했을 때의 효율성?
+	//dy[i]: i번째 인덱스에 있는 구간을 스케쥴의 마지막으로 공부했을 때 최대 효율
 
+	for (int i = 1; i <= M; i++) {
+		dy[i] = study[i].ef; // i번째가 마지막이니까 그 구간 효율은 무조건 들어감
+		for (int j = i - 1; j > 0; j--) {
+			// 끝나는시간이 시작시간보다 작고, i까지의 최대효율보다 크면
+			if (study[j].e + R <= study[i].s && dy[j] + study[i].ef > dy[i]) {
+				dy[i] = dy[j] + study[i].ef;
 
+			}
+		}
+	
+	}
 
+	int max_e = 0;
+	for (int i = 1; i <= M; i++) {
+
+		max_e = max(max_e, dy[i]);
+	}
+
+	cout << max_e;
 }

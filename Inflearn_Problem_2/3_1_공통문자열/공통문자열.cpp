@@ -18,6 +18,9 @@ int main() {
 		cin >> a[i];
 	}
 
+	// 추가필요: 가장 짧은 문자까지만 비교해주면 됨.
+	// count :해당 원소가 몇개있는지 리턴하는 함수 사용 가능
+	// set 사용하여 중복허용하지 않는 것을 이용할 수 있음
 	bool same = true;
 	int j = 0;
 	while (same) {
